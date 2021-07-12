@@ -1,16 +1,693 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: black;
+	box-sizing: border-box;
+	/* font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
+	font-family: "Montserrat", sans-serif;
+}
+body,
+html {
+	background-color: #eefbfb;
+	height: 100%;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+}
+
+.burger-icon {
+	display: none !important;
+}
+.nav-container {
+	display: flex;
+	justify-content: center;
+	padding: 20px 0;
+	background-color: #12232e;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0 5px 5px -5px #333;
+}
+
+.nav-menu {
+	display: flex;
+	width: 80vw;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.links {
+	display: flex;
+	/* justify-content: flex-end; */
+	width: 25vw;
+	justify-content: space-around;
+	text-decoration: none;
+}
+
+.link-text {
+	text-decoration: none;
+}
+.links a {
+	color: white;
+}
+
+.links a:hover {
+	/* color: rgb(83, 60, 60);
+	 */
+	/* opacity: 1; */
+}
+
+.nav-about {
+	flex: 1;
+}
+
+.active {
+	flex: 1;
+	border-color: rgb(142, 145, 156);
+	/* border: 1px solid; */
+	font-weight: 700;
+	position: absolute;
+	/* height: 100%;
+	width: 100%; */
+	pointer-events: none;
+}
+
+.nav-about:hover {
+	/* opacity: 1; */
+}
+
+.nav-team {
+	flex: 1;
+}
+
+.nav-contact {
+	flex: 1;
+}
+
+.nav-projects {
+	flex: 1;
+}
+
+.logo {
+	margin-left: auto;
+}
+
+.logo:hover {
+	opacity: 0.5;
+}
+.main-content-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.main-content {
+	display: flex;
+	padding-top: 10vh;
+	width: 80vw;
+	height: 80vh;
+	align-items: center;
+	align-content: center;
+	padding-bottom: 10vh;
+	min-height: 100%;
+	flex-wrap: wrap;
+}
+
+.main-content p:first-of-type {
+	padding-top: 1vh;
+}
+
+.contact-us-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	min-height: 80vh;
+	flex-wrap: wrap;
+}
+
+.contact-page-left {
+	flex: 1;
+	flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	background-color: #376d963a;
+	align-content: center;
+	justify-content: center;
+	height: 50vh;
+	margin: 1vw;
+	padding: 1vw;
+	text-align: center;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.contact-page-left:hover {
+	/* opacity: 0.91; */
+}
+
+.contact-page-right {
+	flex: 1;
+	flex-wrap: wrap;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	vertical-align: top;
+	background-color: #9ac2e08f;
+	align-content: center;
+	justify-content: center;
+	height: 50vh;
+	margin: 1vw;
+	padding: 1vw;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.contact-page-right:hover {
+	/* opacity: 0.91; */
+}
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	background-color: #203647;
+	min-height: 10vh;
+	max-height: 10vh;
+	flex-direction: column;
+	flex-shrink: 0;
+	margin-top: auto;
+	flex: 1;
+	position: relative;
+	color: white;
+	box-shadow: 0 -5px 5px -5px #333;
+}
+
+.footer-item h3,
+a {
+	color: white;
+}
+#__next {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.landing-page {
+	/* text-align: center; */
+}
+
+.landing-page h1 {
+	/* flex: 1; */
+	color: rgba(30, 101, 163, 0.781);
+}
+.background-video {
+	object-fit: cover;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+:root {
+	--bg-color: #eefbfb;
+}
+
+body {
+	background-color: var(--bg-color);
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: normal;
+}
+
+/* title styles */
+.home-title span {
+	position: relative;
+	overflow: hidden;
+	display: block;
+	line-height: 1.2;
+	color: rgba(253, 253, 253, 0.836);
+	text-shadow: 2px 2px rgba(93, 141, 139, 0.219);
+	/* background-color: rgba(74, 92, 89, 0.212); */
+}
+
+.home-title span::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	/* background: white; */
+	background: #12232e;
+	animation: a-ltr-after 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+	transform: translateX(-101%);
+}
+
+.home-title span::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--bg-color);
+	animation: a-ltr-before 2s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+	transform: translateX(0);
+}
+
+.home-title span:nth-of-type(1)::before,
+.home-title span:nth-of-type(1)::after {
+	animation-delay: 1s;
+}
+
+.home-title span:nth-of-type(2)::before,
+.home-title span:nth-of-type(2)::after {
+	animation-delay: 1.5s;
+}
+
+@keyframes a-ltr-after {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(101%);
+	}
+}
+
+@keyframes a-ltr-before {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(200%);
+	}
+}
+
+.links {
+	padding: 20px;
+	justify-content: space-around;
+	padding: 0 100px;
+}
+
+.links div {
+	height: 60%;
+	font-size: 18px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.links div::before,
+.links div::after {
+	content: "";
+	pointer-events: none;
+	position: absolute;
+}
+
+/* ---------------------- Style 1 -------------------------- */
+
+.links div:not(.active)::before,
+.links div:not(.active)::after {
+	border: 0px solid transparent;
+	width: 0%;
+	height: 0%;
+	bottom: 0%;
+	right: 0%;
+}
+
+/* 'before' sudo element animates the bottom and left borders */
+.links div:not(.active)::before {
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+}
+
+/* 'after' sudo element animates the top and right borders */
+.links div:not(.active)::after {
+	border-top-width: 2px;
+	border-right-width: 2px;
+}
+
+/* On Hover border color is changed from transparent to the #fff */
+/* Width and a height of the sudo elements are increased from zero to 100% */
+.links div:not(.active):hover::before,
+.links div:not(.active):hover::after {
+	border-color: rgb(142, 145, 156);
+	transition: border-color 0s, width 0.3s, height 0.3s;
+	width: 100%;
+	height: 100%;
+}
+
+/* Delay is added to the height animation of the 'before' sudo element */
+.links div:not(.active):hover::before {
+	transition-delay: 0s, 0s, 0.3s;
+}
+
+/* Delay is added to the width animation of the 'after' sudo element */
+.links div:not(.active):hover::after {
+	transition-delay: 0s, 0.3s, 0s;
+}
+
+#map {
+	height: 80%;
+	width: 80%;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.project-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+.card-container {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	background-color: #376d963a;
+	text-align: center;
+	margin: 1vh;
+}
+.card-container:hover {
+	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.card-item {
+	flex: 1;
+}
+
+.team-container {
+	display: flex;
+	/* justify-content: center; */
+	text-align: center;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	max-height: 80vh;
+	/* margin: 1vh;
+	height: 25vh; */
+	/* gap: 10px; */
+	/* gap: 1rem; */
+}
+
+.team-container h1 {
+	margin-top: 5vh;
+	padding-top: 5vh;
+	align-content: flex-end;
+}
+
+.team-container div:first-of-type {
+}
+
+.team-card-container {
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding-top: 0;
+	padding: 30px;
+}
+
+.team-card-container a {
+	color: black;
+}
+.team-card-container img {
+	border-radius: 150px;
+}
+
+.team-card-container h4 {
+	margin-top: 1vh;
+}
+
+/* MOBILE NAVIGATION OPTIONS */
+@media screen and (max-width: 640px) {
+	body {
+		width: 100%;
+		height: 100%;
+		-webkit-overflow-scrolling: touch;
+	}
+	.nav-container {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		/* padding: 20px 0; */
+		background-color: #12232e;
+		position: relative;
+		z-index: 1;
+		box-shadow: 0 5px 5px -5px #333;
+		max-width: 100vw;
+	}
+
+	.nav-menu {
+		display: flex;
+		width: 100vw;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.links {
+		display: flex;
+		/* justify-content: flex-end; */
+		/* width: 25vw; */
+		/* justify-content: space-around; */
+		text-decoration: none;
+		flex-direction: column;
+		align-items: center;
+		transition: max-height 1s;
+		max-height: 50vh;
+	}
+	.links-disabled {
+		/* display: none; */
+		overflow: hidden;
+		max-height: 0;
+	}
+	.link-text {
+		text-decoration: none;
+	}
+	.links a {
+		color: white;
+	}
+
+	.links a:hover {
+		/* color: rgb(83, 60, 60);
+		 */
+		/* opacity: 1; */
+	}
+
+	.nav-about {
+		flex: 1;
+	}
+
+	.active {
+		flex: 1;
+		border-color: rgb(142, 145, 156);
+		/* border: 1px solid; */
+		font-weight: 700;
+		position: absolute;
+		/* height: 100%;
+		width: 100%; */
+		pointer-events: none;
+	}
+
+	.nav-about:hover {
+		/* opacity: 1; */
+	}
+
+	.nav-team {
+		flex: 1;
+	}
+
+	.nav-contact {
+		flex: 1;
+	}
+
+	.nav-projects {
+		flex: 1;
+	}
+
+	.logo {
+		/* align-items: center; */
+		/* flex: 1; */
+	}
+
+	.logo:hover {
+		opacity: 0.5;
+	}
+
+	.logo-container {
+	}
+
+	.burger-button {
+		background: none;
+		color: inherit;
+		border: none;
+		padding: 0;
+		font: inherit;
+		cursor: pointer;
+		outline: inherit;
+	}
+	.burger-icon {
+		display: inline-block !important;
+	}
+
+	/* Main Content */
+	.main-content-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+	}
+
+	.main-content {
+		display: flex;
+		padding-top: 10vh;
+		width: 80vw;
+		height: 80vh;
+		align-items: center;
+		align-content: center;
+		padding-bottom: 10vh;
+		min-height: 100%;
+		flex-wrap: wrap;
+		overflow-y: auto;
+		overflow: auto;
+	}
+
+	.main-content p:first-of-type {
+		padding-top: 1vh;
+	}
+
+	/* Team page  */
+
+	.team-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+		justify-content: space-between;
+		max-height: 100vh;
+		margin: 0px;
+		flex: 1 1 100%;
+		height: auto;
+		width: 100%;
+		padding: 5px;
+		/* position: absolute; */
+	}
+
+	.team-container h1 {
+		margin-top: 0vh;
+		padding-top: 0vh;
+	}
+
+	.team-card-container {
+		flex-wrap: wrap;
+		padding-top: 0;
+		align-content: flex-start;
+	}
+
+	.team-card-container a {
+		color: black;
+	}
+	.team-card-container img {
+		border-radius: 150px;
+	}
+
+	.team-card-container img {
+		height: 125px;
+		width: 125px;
+	}
+
+	.team-card-container div {
+		flex: 1;
+	}
+
+	/* Footer options */
+
+	.footer {
+		bottom: 0;
+		display: flex;
+		margin-top: auto;
+		align-items: center;
+		justify-content: center;
+		height: auto;
+		width: 100vw;
+		background-color: #203647;
+		min-height: 10vh;
+		max-height: 10vh;
+		flex-direction: column;
+		flex-shrink: 0;
+		position: relative;
+		color: white;
+		box-shadow: 0 -5px 5px -5px #333;
+	}
+
+	.footer-item h3,
+	a {
+		color: white;
+	}
+
+	/* Contact page mobile layout */
+
+	.contact-us-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		min-height: 80vh;
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+
+	.contact-page-left {
+		flex: 1;
+		flex-wrap: wrap;
+		display: flex;
+		align-items: center;
+		background-color: #376d963a;
+		align-content: center;
+		justify-content: center;
+		/* flex-direction: row; */
+		width: 90vw;
+		height: 50vh;
+		margin: 1vw;
+		padding: 1vw;
+		text-align: center;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	}
+
+	.contact-page-right {
+		flex: 1;
+		flex-wrap: wrap;
+		display: flex;
+		width: 90vw;
+		align-items: center;
+		/* flex-direction: row; */
+		vertical-align: top;
+		background-color: #9ac2e08f;
+		align-content: center;
+		justify-content: center;
+		height: 50vh;
+		margin: 1vw;
+		padding: 1vw;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	}
+	.contact-page-right h2 {
+		margin-bottom: 2vh;
+	}
+
+	.contact-page-right p:first-of-type {
+		margin-top: 2vh;
+	}
+	#map {
+		height: 25vh;
+		width: 35vh;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	}
 }
