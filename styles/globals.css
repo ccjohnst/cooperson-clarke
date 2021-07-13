@@ -374,6 +374,9 @@ h1 {
 	background-color: #376d963a;
 	text-align: center;
 	margin: 1vh;
+	height: 300px;
+	width: 300px;
+	padding-top: 20px;
 }
 .card-container:hover {
 	box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
@@ -631,6 +634,28 @@ h1 {
 	.footer-item h3,
 	a {
 		color: white;
+	}
+
+	.main-container h1 {
+		flex: 1;
+	}
+	/* Project page mobile layout */
+
+	.project-wrapper {
+		flex-direction: column;
+		/* display: block; */
+	}
+	.project-container {
+		display: block;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		align-items: center;
+		overflow-y: auto;
+		height: 100vh;
+		flex-direction: row;
+		padding-top: 0;
+		position: relaitve;
+		padding-bottom: 1vh;
 	}
 
 	/* Contact page mobile layout */

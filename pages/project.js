@@ -16,7 +16,7 @@ export default function Projects() {
 				<meta name="Our projects" content="Our projects" />
 			</Head>
 			<div className="">
-				<div className="main-content-container">
+				<div className="main-content-container project-wrapper">
 					<h1 className="project-title">Projects</h1>
 					<div className="main-content project-container">
 						<ProjectCard
