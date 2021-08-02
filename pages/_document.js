@@ -12,7 +12,7 @@ class MyDocument extends Document {
 				<Head />
 				<body>
 					<link rel="preconnect" href="https://fonts.googleapis.com" />
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link
 						href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
 						rel="stylesheet"
